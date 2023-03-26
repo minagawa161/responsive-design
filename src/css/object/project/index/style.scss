@@ -1,0 +1,91 @@
+@use "sass:math";
+@use "global" as *;
+
+.heading-1 {
+  @include font-size(32);
+
+  @include mq {
+    @include font-size-md(32);
+  }
+}
+.heading-2 {
+  @include font-size(24);
+
+  @include mq {
+    @include font-size-md(24);
+  }
+}
+.text {
+  @include font-size(16);
+
+  @include mq {
+    @include font-size-md(16);
+  }
+}
+
+.el-wrapper {
+  display: grid;
+
+  gap: length(80);
+
+  @include mq {
+    gap: length-md(80);
+  }
+}
+
+.el-1 {
+  display: flex;
+  align-items: flex-end;
+  background: #ccc;
+  min-height: length(400);
+  margin: 0 calc(50% - var(--vw, 1vw) * 50);
+  padding: 0 calc(var(--vw, 1vw) * 50 - 50%) length(40);
+
+  @include mq {
+    min-height: length-md(400);
+    padding-bottom: length-md(40);
+  }
+}
+.el-1__inner {
+  display: grid;
+
+  gap: length(40);
+
+  @include mq {
+    max-width: font-length-md(600);
+
+    gap: length-md(40);
+  }
+}
+.el-2 {
+  display: grid;
+
+  gap: length(32);
+
+  @include mq {
+    display: flex;
+    align-items: flex-start;
+
+    gap: length-md(32);
+  }
+}
+.el-2__head {
+  background: #000;
+  height: length(200);
+
+  @include mq {
+    flex-shrink: 0;
+    width: length-md(200);
+    height: length-md(200);
+  }
+}
+.el-2__body {
+  display: grid;
+  width: 100%;
+
+  gap: length(20);
+
+  @include mq {
+    gap: length-md(20);
+  }
+}

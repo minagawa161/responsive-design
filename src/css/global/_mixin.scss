@@ -1,0 +1,32 @@
+@use "sass:math";
+@use "variable" as *;
+@use "function" as *;
+
+// https://ics.media/entry/200317/ に游ゴシックを追加
+@mixin default-font {
+  font-family: "Helvetica Neue", Arial, "游ゴシック体", YuGothic,
+  "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic",
+  "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+}
+
+// 游ゴシック体でboldを使いたいときはこちらを使用
+@mixin default-font-bold {
+  font-family: "Helvetica Neue", Arial, "游ゴシック体", YuGothic, "游ゴシック",
+  "Yu Gothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo,
+  sans-serif;
+  font-weight: bold;
+}
+
+// 基本的にはmixinを使うが。font-size以外でfont-size関数を使いたいことがあるのでfunctionも残してある
+@mixin font-size($length, $width: $mobile) {
+  font-size: font-length($length, $width);
+}
+@mixin font-size-md($length, $scale: 0.25 * 0.5) {
+  font-size: font-length-md($length);
+}
+
+@mixin mq($breakpoint: $medium) {
+  @media screen and (min-width: $breakpoint) {
+    @content;
+  }
+}

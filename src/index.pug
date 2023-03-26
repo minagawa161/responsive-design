@@ -1,0 +1,43 @@
+//----------------------------------------------------------------
+//- 共通のレイアウトを継承
+//----------------------------------------------------------------
+extends /pug/layout/_default
+
+//----------------------------------------------------------------
+//- ページ毎の変数を追加(メタタグや相対パス、ページ固有データ)
+//----------------------------------------------------------------
+append variables
+  //- ページ固有データ
+
+//----------------------------------------------------------------
+//- ページ毎のcssを追加
+//----------------------------------------------------------------
+append css
+  link(rel="stylesheet" href=`${cssPath}`)
+
+//----------------------------------------------------------------
+//- ページ毎のjsを追加
+//----------------------------------------------------------------
+append js
+  script(src=jsPath defer)
+
+//----------------------------------------------------------------
+//- mainコンテンツを記述
+//----------------------------------------------------------------
+block content
+  .el-wrapper
+    .el-1
+      .el-1__inner
+        h1.heading-1
+          | Heading 1
+        p.text
+          | Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure illo animi odio, molestias voluptatum cupiditate illum expedita dolores sed, magni quod harum consequuntur dicta facere aut debitis blanditiis similique suscipit.
+    - for (let i = 0; i < 4; i++)
+      .el-2
+        .el-2__head
+        .el-2__body
+          h2.heading-2
+            | Heading 2
+          p.text
+            | Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure illo animi odio, molestias voluptatum cupiditate illum expedita dolores sed, magni quod harum consequuntur dicta facere aut debitis blanditiis similique suscipit.
+

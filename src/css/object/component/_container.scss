@@ -1,0 +1,19 @@
+@use "sass:math";
+@use "global" as *;
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 0 vmin($side-width);
+
+  @include mq {
+    padding: 0 vw($side-width-md, $desktop);
+  }
+}
+.container__inner {
+  width: 100%;
+
+  @include mq {
+    max-width: calc((#{$desktop} - #{$side-width-md * 2}px) * 1.25);
+  }
+}

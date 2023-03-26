@@ -1,0 +1,19 @@
+@use "sass:math";
+@use "global" as *;
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  min-height: 100vh;
+  font-size: 62.5%;
+}
+
+body {
+  @include default-font;
+
+  min-height: 100%;
+  line-height: 1;
+}
